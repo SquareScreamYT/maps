@@ -1,337 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transit Maps Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            margin: 20px;
-            background-color: #e9ecef;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .map-card {
-            background: #f8f9fa;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.2s;
-        }
-        .map-card:hover {
-            transform: translateY(-5px);
-        }
-        .map-image {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            display: block;
-        }
-        .map-info {
-            padding: 15px;
-        }
-        .location-date {
-            font-size: 14px;
-            color: #868e96;
-            margin-bottom: 5px;
-            display: flex;
-            justify-content: space-between;
-        }
-        .map-title {
-            font-size: 18px;
-            font-weight: bold;
-            color: #495057;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .map-type {
-            font-size: 14px;
-            font-weight: normal;
-            color: #868e96;
-        }
-        h1 {
-            text-align: center;
-            color: #495057;
-            margin-bottom: 30px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transit Maps Collection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/visby-round-cf" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Ping Round';
+      src: url('fonts/PingRoundGeLVariable.ttf') format('woff2'),
+         url('fonts/PingRoundHebrewVF.ttf') format('woff'),
+         url('fonts/PingRoundLVariable.ttf') format('woff');
+    }
+    body {
+      font-family: 'Visby Round CF', 'Ping Round', 'Nunito', sans-serif;
+      font-weight: bold;
+      margin: 20px;
+      background-color: #e9ecef;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .map-card {
+      background: #f8f9fa;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .map-card:hover {
+      transform: translateY(-5px);
+    }
+    .map-image {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+    .map-info {
+      padding: 15px;
+    }
+    .location-date {
+      font-size: 14px;
+      color: #868e96;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .map-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #495057;
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .map-type {
+      font-size: 14px;
+      font-weight: bold;
+      color: #868e96;
+    }
+    h1 {
+      text-align: center;
+      color: #495057;
+      margin-bottom: 30px;
+    }
+  </style>
 </head>
 <body>
-    <h1>sq's Transit Maps</h1>
-    <div class="gallery">
-        <div class="map-card">
-            <img src="src/bratislava.png" alt="Bratislava Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Bratislava, Slovakia</span>
-                    <span>7/7/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Tramvajová mapa Bratislava</span>
-                    <span class="map-type">Tram</span>
-                </div>
-            </div>
+  <h1>sq's Transit Maps</h1>
+  <div class="gallery">
+    <div class="map-card">
+      <img src="src/bratislava.png" alt="Bratislava Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Bratislava, Slovakia</span>
+          <span>7/7/2025</span>
         </div>
-
-        <div class="map-card">
-            <img src="src/budapest.png" alt="Budapest Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Budapest, Hungary</span>
-                    <span>8/7/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Budapest metró térkép</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
+        <div class="map-title">
+          <span>Tramvajová mapa Bratislava</span>
+          <span class="map-type">Tram</span>
         </div>
-
-        <div class="map-card">
-            <img src="src/sofia.png" alt="Sofia Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Sofia, Bulgaria</span>
-                    <span>10/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Карта на метрото в София</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/ghent.png" alt="Ghent Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Ghent, Belgium</span>
-                    <span>11/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Tramkaart Gent</span>
-                    <span class="map-type">Tram</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/denver.png" alt="Denver Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Denver, USA</span>
-                    <span>12/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Denver Light Rail Map</span>
-                    <span class="map-type">Tram+Commuter</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/manila.png" alt="Manila Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Manila, Philippines</span>
-                    <span>13/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Mapa ng mga tren ng Kamaynilaan</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/oslo.png" alt="Oslo Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Oslo, Norway</span>
-                    <span>14/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Oslo T-banekart</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/tyne_and_wear.png" alt="Tyne and Wear Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Newcastle-upon-Tyne, UK</span>
-                    <span>15/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Tyne & Wear Metro Map</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/manchester.png" alt="Manchester Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Manchester, UK</span>
-                    <span>16/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Manchester Metrolink Map</span>
-                    <span class="map-type">Tram</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/washington_dc.png" alt="Washington DC Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Washington DC, USA</span>
-                    <span>17/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Washington Metro Map</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/warsaw.png" alt="Warsaw Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Warsaw, Poland</span>
-                    <span>18/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Mapa metra w Warszawie</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/copenhagen.png" alt="Copenhagen Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Copenhagen, Denmark</span>
-                    <span>19/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Kort over Københavns Metro</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/serfaus.png" alt="Serfaus Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Serfaus, Austria</span>
-                    <span>20/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>U-Bahn-Karte Serfaus</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/haifa.png" alt="Haifa Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Haifa, Israel</span>
-                    <span>21/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Karmelit Haifa Mapa</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/dnipro.png" alt="Dnipro Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Dnipro, Ukraine</span>
-                    <span>22/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Карта метрополiтену Днiпра</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/canberra.png" alt="Canberra Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Canberra, Australia</span>
-                    <span>22/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Canberra Light Rail Map</span>
-                    <span class="map-type">Tram</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/omsk.png" alt="Omsk Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Omsk, Russia</span>
-                    <span>23/07/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Карта метро Омска</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/tbilisi.png" alt="Tbilisi Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Tbilisi, Georgia</span>
-                    <span>28/08/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Tbilisis metros ruka</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="map-card">
-            <img src="src/novosibirsk.png" alt="Novosibirsk Transit Map" class="map-image">
-            <div class="map-info">
-                <div class="location-date">
-                    <span>Novosibirsk, Russia</span>
-                    <span>29/08/2025</span>
-                </div>
-                <div class="map-title">
-                    <span>Карта метро Новосибирска</span>
-                    <span class="map-type">Metro</span>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="map-card">
+      <img src="src/budapest.png" alt="Budapest Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Budapest, Hungary</span>
+          <span>8/7/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Budapest metró térkép</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/sofia.png" alt="Sofia Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Sofia, Bulgaria</span>
+          <span>10/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Карта на метрото в София</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/ghent.png" alt="Ghent Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Ghent, Belgium</span>
+          <span>11/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Tramkaart Gent</span>
+          <span class="map-type">Tram</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/denver.png" alt="Denver Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Denver, USA</span>
+          <span>12/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Denver Light Rail Map</span>
+          <span class="map-type">Tram+Commuter</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/manila.png" alt="Manila Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Manila, Philippines</span>
+          <span>13/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Mapa ng mga tren ng Kamaynilaan</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/oslo.png" alt="Oslo Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Oslo, Norway</span>
+          <span>14/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Oslo T-banekart</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/tyne_and_wear.png" alt="Tyne and Wear Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Newcastle-upon-Tyne, UK</span>
+          <span>15/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Tyne & Wear Metro Map</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/manchester.png" alt="Manchester Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Manchester, UK</span>
+          <span>16/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Manchester Metrolink Map</span>
+          <span class="map-type">Tram</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/washington_dc.png" alt="Washington DC Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Washington DC, USA</span>
+          <span>17/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Washington Metro Map</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/warsaw.png" alt="Warsaw Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Warsaw, Poland</span>
+          <span>18/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Mapa metra w Warszawie</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/copenhagen.png" alt="Copenhagen Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Copenhagen, Denmark</span>
+          <span>19/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Kort over Københavns Metro</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/serfaus.png" alt="Serfaus Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Serfaus, Austria</span>
+          <span>20/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>U-Bahn-Karte Serfaus</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/haifa.png" alt="Haifa Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Haifa, Israel</span>
+          <span>21/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>מפת כרמלית חיפה</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/dnipro.png" alt="Dnipro Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Dnipro, Ukraine</span>
+          <span>22/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Карта метрополiтену Днiпра</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/canberra.png" alt="Canberra Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Canberra, Australia</span>
+          <span>22/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Canberra Light Rail Map</span>
+          <span class="map-type">Tram</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/omsk.png" alt="Omsk Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Omsk, Russia</span>
+          <span>23/07/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Карта метро Омска</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/tbilisi.png" alt="Tbilisi Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Tbilisi, Georgia</span>
+          <span>28/08/2025</span>
+        </div>
+        <div class="map-title">
+          <span>თბილისის მეტროს რუკა</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/novosibirsk.png" alt="Novosibirsk Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Novosibirsk, Russia</span>
+          <span>29/08/2025</span>
+        </div>
+        <div class="map-title">
+          <span>Карта метро Новосибирска</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
