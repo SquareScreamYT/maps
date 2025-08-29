@@ -9,12 +9,18 @@
   <style>
     @font-face {
       font-family: 'Ping Round';
-      src: url('fonts/PingRoundGeLVariable.ttf') format('woff2'),
-         url('fonts/PingRoundHebrewVF.ttf') format('woff'),
-         url('fonts/PingRoundLVariable.ttf') format('woff');
+      src: url('fonts/PingRoundLVariable.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Ping Round Hebrew';
+      src: url('fonts/PingRoundHebrewVF.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'Ping Round Georgian';
+      src: url('fonts/PingRoundGeLVariable.ttf') format('truetype');
     }
     body {
-      font-family: 'Visby Round CF', 'Ping Round', 'Nunito', sans-serif;
+      font-family: 'Visby Round CF', 'Ping Round', 'Ping Round Hebrew', 'Ping Round Georgian', 'Nunito', sans-serif;
       font-weight: bold;
       margin: 20px;
       background-color: #e9ecef;
