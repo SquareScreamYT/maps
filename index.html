@@ -14,10 +14,11 @@
   <meta name="theme-color" content="#4dabf7">
   <meta property="og:title" content="sq's Maps" />
   <meta property="og:description" content="a collection of simple, easy-to-read transit maps" />
-  <meta property="og:image" content="https://sq.is-a.dev/maps/bratislava.png" />
+  <meta property="og:image" content="https://sq.is-a.dev/maps/src/bratislava.png" />
   <meta property="og:url" content="https://sq.is-a.dev/maps" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/visby-round-cf" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     @font-face {
       font-family: 'Ping Round';
@@ -68,6 +69,16 @@
       margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+    }
+    .zoom-btn {
+      color: #868e96;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: color 0.2s;
+    }
+    .zoom-btn:hover {
+      color: #495057;
     }
     .map-title {
       font-size: 18px;
@@ -88,6 +99,37 @@
       color: #495057;
       margin-bottom: 30px;
     }
+    .incomplete-section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      color: #495057;
+    }
+    .incomplete-section h2 {
+      color: #495057;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .incomplete-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #f8f9fa;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .incomplete-table th,
+    .incomplete-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .incomplete-table th {
+      background: #e9ecef;
+      color: #495057;
+    }
+    .incomplete-table tr:hover {
+      background: #f1f3f4;
+    }
   </style>
 </head>
 <body>
@@ -98,7 +140,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Bratislava, Slovakia</span>
-          <span>7/7/2025</span>
+          <div>
+            <a href="src/bratislava.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>7/7/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Tramvajová mapa Bratislava</span>
@@ -112,7 +159,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Budapest, Hungary</span>
-          <span>8/7/2025</span>
+          <div>
+            <a href="src/budapest.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>8/7/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Budapest metró térkép</span>
@@ -126,7 +178,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Sofia, Bulgaria</span>
-          <span>10/07/2025</span>
+          <div>
+            <a href="src/sofia.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>10/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Карта на метрото в София</span>
@@ -140,7 +197,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Ghent, Belgium</span>
-          <span>11/07/2025</span>
+          <div>
+            <a href="src/ghent.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>11/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Tramkaart Gent</span>
@@ -154,7 +216,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Denver, USA</span>
-          <span>12/07/2025</span>
+          <div>
+            <a href="src/denver.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>12/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Denver Light Rail Map</span>
@@ -168,7 +235,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Manila, Philippines</span>
-          <span>13/07/2025</span>
+          <div>
+            <a href="src/manila.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>13/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Mapa ng mga tren ng Kamaynilaan</span>
@@ -182,7 +254,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Oslo, Norway</span>
-          <span>14/07/2025</span>
+          <div>
+            <a href="src/oslo.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>14/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Oslo T-banekart</span>
@@ -196,7 +273,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Newcastle-upon-Tyne, UK</span>
-          <span>15/07/2025</span>
+          <div>
+            <a href="src/tyne_and_wear.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>15/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Tyne & Wear Metro Map</span>
@@ -210,7 +292,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Manchester, UK</span>
-          <span>16/07/2025</span>
+          <div>
+            <a href="src/manchester.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>16/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Manchester Metrolink Map</span>
@@ -224,7 +311,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Washington DC, USA</span>
-          <span>17/07/2025</span>
+          <div>
+            <a href="src/washington_dc.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>17/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Washington Metro Map</span>
@@ -238,7 +330,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Warsaw, Poland</span>
-          <span>18/07/2025</span>
+          <div>
+            <a href="src/warsaw.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>18/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Mapa metra w Warszawie</span>
@@ -252,7 +349,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Copenhagen, Denmark</span>
-          <span>19/07/2025</span>
+          <div>
+            <a href="src/copenhagen.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>19/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Kort over Københavns Metro</span>
@@ -266,7 +368,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Serfaus, Austria</span>
-          <span>20/07/2025</span>
+          <div>
+            <a href="src/serfaus.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>20/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>U-Bahn-Karte Serfaus</span>
@@ -280,7 +387,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Haifa, Israel</span>
-          <span>21/07/2025</span>
+          <div>
+            <a href="src/haifa.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>21/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>מפת כרמלית חיפה</span>
@@ -294,7 +406,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Dnipro, Ukraine</span>
-          <span>22/07/2025</span>
+          <div>
+            <a href="src/dnipro.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>22/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Карта метрополiтену Днiпра</span>
@@ -308,7 +425,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Canberra, Australia</span>
-          <span>22/07/2025</span>
+          <div>
+            <a href="src/canberra.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>22/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Canberra Light Rail Map</span>
@@ -322,7 +444,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Omsk, Russia</span>
-          <span>23/07/2025</span>
+          <div>
+            <a href="src/omsk.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>23/07/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Карта метро Омска</span>
@@ -336,7 +463,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Tbilisi, Georgia</span>
-          <span>28/08/2025</span>
+          <div>
+            <a href="src/tbilisi.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>28/08/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>თბილისის მეტროს რუკა</span>
@@ -350,7 +482,12 @@
       <div class="map-info">
         <div class="location-date">
           <span>Novosibirsk, Russia</span>
-          <span>29/08/2025</span>
+          <div>
+            <a href="src/novosibirsk.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>29/08/2025</span>
+          </div>
         </div>
         <div class="map-title">
           <span>Карта метро Новосибирска</span>
@@ -359,7 +496,41 @@
       </div>
     </div>
   </div>
+  
+  <div class="incomplete-section">
+    <h2>Incomplete</h2>
+    <table class="incomplete-table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Country</th>
+          <th>Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Lyon</td><td>France</td><td>Metro/Tram</td></tr>
+        <tr><td>Hong Kong</td><td>China</td><td>Metro</td></tr>
+        <tr><td>Singapore</td><td>Singapore</td><td>Metro</td></tr>
+        <tr><td>Tokyo</td><td>Japan</td><td>Metro</td></tr>
+        <tr><td>Hamburg</td><td>Germany</td><td>Metro</td></tr>
+        <tr><td>Amsterdam</td><td>Netherlands</td><td>Metro/Tram</td></tr>
+        <tr><td>Paris</td><td>France</td><td>Metro</td></tr>
+        <tr><td>Moscow</td><td>Russia</td><td>Metro</td></tr>
+        <tr><td>Adelaide</td><td>Australia</td><td>Tram</td></tr>
+        <tr><td>Vancouver</td><td>Canada</td><td>Tram</td></tr>
+        <tr><td>Bangkok</td><td>Thailand</td><td>Metro</td></tr>
+        <tr><td>Gothenburg</td><td>Sweden</td><td>Tram</td></tr>
+        <tr><td>Melbourne</td><td>Australia</td><td>Tram</td></tr>
+        <tr><td>Sydney</td><td>Australia</td><td>Metro</td></tr>
+        <tr><td>The Hague</td><td>Netherlands</td><td>Tram</td></tr>
+        <tr><td>Krakow</td><td>Poland</td><td>Tram</td></tr>
+        <tr><td>Nuremberg</td><td>Germany</td><td>Metro/Tram</td></tr>
+        <tr><td>Jakarta</td><td>Indonesia</td><td>Metro</td></tr>
+        <tr><td>Málaga</td><td>Spain</td><td>Metro</td></tr>
+      </tbody>
+    </table>
+  </div>
+  
   <p>to do list: add a reference section and a tutorial to replicate the style</p>
-  <p>add future cities here or something</p>
 </body>
 </html>
