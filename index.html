@@ -39,7 +39,7 @@
     }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       gap: 20px;
       max-width: 1200px;
       margin: 0 auto;
@@ -70,13 +70,15 @@
       justify-content: space-between;
       align-items: center;
     }
-    .zoom-btn {
+    .zoom-btn,
+    .wiki-btn {
       color: #868e96;
       text-decoration: none;
       margin-right: 10px;
       transition: color 0.2s;
     }
-    .zoom-btn:hover {
+    .zoom-btn:hover,
+    .wiki-btn:hover {
       color: #495057;
     }
     .map-title {
@@ -129,17 +131,45 @@
     .incomplete-table tr:hover {
       background: #f1f3f4;
     }
+    .sort-container {
+      max-width: 1200px;
+      margin: 0 auto 20px auto;
+      text-align: center;
+    }
+    .sort-select {
+      font-family: 'Visby Round CF', 'Ping Round', 'Nunito', sans-serif;
+      font-weight: bold;
+      padding: 10px 15px;
+      border: 2px solid #dee2e6;
+      border-radius: 10px;
+      background: #f8f9fa;
+      color: #495057;
+      font-size: 14px;
+    }
+    *:focus {
+      outline: none;
+    }
   </style>
 </head>
 <body>
   <h1>sq's Transit Maps</h1>
-  <div class="gallery">
+  <div class="sort-container">
+    <select class="sort-select" onchange="sortMaps(this.value)">
+      <option value="date">Sort by Date</option>
+      <option value="city">Sort by City</option>
+      <option value="country">Sort by Country</option>
+    </select>
+  </div>
+  <div class="gallery" id="gallery">
     <div class="map-card">
       <img src="src/bratislava.png" alt="Bratislava Transit Map" class="map-image">
       <div class="map-info">
         <div class="location-date">
           <span>Bratislava, Slovakia</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Trams_in_Bratislava" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/bratislava.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -159,6 +189,9 @@
         <div class="location-date">
           <span>Budapest, Hungary</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Budapest_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/budapest.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -178,6 +211,9 @@
         <div class="location-date">
           <span>Sofia, Bulgaria</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Sofia_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/sofia.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -197,6 +233,9 @@
         <div class="location-date">
           <span>Ghent, Belgium</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Trams_in_Ghent" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/ghent.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -216,6 +255,9 @@
         <div class="location-date">
           <span>Denver, USA</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/RTD_Rail" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/denver.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -235,6 +277,9 @@
         <div class="location-date">
           <span>Manila, Philippines</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Manila_Metro_Rail_Transit_System" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/manila.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -254,6 +299,9 @@
         <div class="location-date">
           <span>Oslo, Norway</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Oslo_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/oslo.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -273,6 +321,9 @@
         <div class="location-date">
           <span>Newcastle-upon-Tyne, UK</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Tyne_and_Wear_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/tyne_and_wear.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -292,6 +343,9 @@
         <div class="location-date">
           <span>Manchester, UK</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Manchester_Metrolink" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/manchester.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -311,6 +365,9 @@
         <div class="location-date">
           <span>Washington DC, USA</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Washington_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/washington_dc.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -330,6 +387,9 @@
         <div class="location-date">
           <span>Warsaw, Poland</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Warsaw_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/warsaw.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -349,6 +409,9 @@
         <div class="location-date">
           <span>Copenhagen, Denmark</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Copenhagen_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/copenhagen.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -368,6 +431,9 @@
         <div class="location-date">
           <span>Serfaus, Austria</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Serfaus_suspended_monorail" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/serfaus.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -387,6 +453,9 @@
         <div class="location-date">
           <span>Haifa, Israel</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Carmelit" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/haifa.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -406,6 +475,9 @@
         <div class="location-date">
           <span>Dnipro, Ukraine</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Dnipro_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/dnipro.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -425,6 +497,9 @@
         <div class="location-date">
           <span>Canberra, Australia</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Canberra_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/canberra.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -444,6 +519,9 @@
         <div class="location-date">
           <span>Omsk, Russia</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Omsk_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/omsk.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -463,6 +541,9 @@
         <div class="location-date">
           <span>Tbilisi, Georgia</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Tbilisi_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/tbilisi.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -482,6 +563,9 @@
         <div class="location-date">
           <span>Novosibirsk, Russia</span>
           <div>
+            <a href="https://en.wikipedia.org/wiki/Novosibirsk_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
             <a href="src/novosibirsk.png" target="_blank" class="zoom-btn">
               <i class="fas fa-search-plus"></i>
             </a>
@@ -490,6 +574,28 @@
         </div>
         <div class="map-title">
           <span>Карта метро Новосибирска</span>
+          <span class="map-type">Metro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-card">
+      <img src="src/montréal.png" alt="Montréal Transit Map" class="map-image">
+      <div class="map-info">
+        <div class="location-date">
+          <span>Montréal, Canada</span>
+          <div>
+            <a href="https://en.wikipedia.org/wiki/Montreal_Metro" target="_blank" class="wiki-btn">
+              <i class="fab fa-wikipedia-w"></i>
+            </a>
+            <a href="src/montreal.png" target="_blank" class="zoom-btn">
+              <i class="fas fa-search-plus"></i>
+            </a>
+            <span>30/08/2025</span>
+          </div>
+        </div>
+        <div class="map-title">
+          <span>Plan du métro de Montréal</span>
           <span class="map-type">Metro</span>
         </div>
       </div>
@@ -513,6 +619,7 @@
         <tr><td>Tokyo</td><td>Japan</td><td>Metro</td></tr>
         <tr><td>Hamburg</td><td>Germany</td><td>Metro</td></tr>
         <tr><td>Amsterdam</td><td>Netherlands</td><td>Metro/Tram</td></tr>
+        <tr><td>Bucharest</td><td>Romania</td><td>Metro</td></tr>
         <tr><td>Paris</td><td>France</td><td>Metro</td></tr>
         <tr><td>Moscow</td><td>Russia</td><td>Metro</td></tr>
         <tr><td>Adelaide</td><td>Australia</td><td>Tram</td></tr>
@@ -527,10 +634,60 @@
         <tr><td>Jakarta</td><td>Indonesia</td><td>Metro</td></tr>
         <tr><td>Málaga</td><td>Spain</td><td>Metro</td></tr>
         <tr><td>Ürümqi</td><td>China</td><td>Metro</td></tr>
+        <tr><td>Shanghai</td><td>China</td><td>Metro</td></tr>
+        <tr><td>Beijing</td><td>China</td><td>Metro</td></tr>
+        <tr><td>Chongqing</td><td>China</td><td>Metro</td></tr>
+        <tr><td>New York City</td><td>China</td><td>Metro</td></tr>
+        <tr><td>London</td><td>UK</td><td>Metro</td></tr>
       </tbody>
     </table>
   </div>
   
   <p>to do list: add a reference section and a tutorial to replicate the style</p>
+
+  <script>
+    function extractMapData() {
+      const cards = Array.from(document.querySelectorAll('.map-card'));
+      return cards.map(card => {
+        const img = card.querySelector('.map-image').src.split('/').pop();
+        const locationText = card.querySelector('.location-date span:first-child').textContent;
+        const [city, country] = locationText.split(', ');
+        const date = card.querySelector('.location-date span:last-child').textContent;
+        const title = card.querySelector('.map-title span:first-child').textContent;
+        const type = card.querySelector('.map-type').textContent;
+        
+        return {
+          element: card,
+          img,
+          city,
+          country,
+          date,
+          title,
+          type
+        };
+      });
+    }
+
+    function sortMaps(sortBy) {
+      const mapData = extractMapData();
+      const gallery = document.getElementById('gallery');
+      
+      switch(sortBy) {
+        case 'city':
+          mapData.sort((a, b) => a.city.localeCompare(b.city));
+          break;
+        case 'country':
+          mapData.sort((a, b) => a.country.localeCompare(b.country));
+          break;
+        case 'date':
+        default:
+          mapData.sort((a, b) => new Date(a.date.split('/').reverse().join('-')) - new Date(b.date.split('/').reverse().join('-')));
+          break;
+      }
+      
+      gallery.innerHTML = '';
+      mapData.forEach(map => gallery.appendChild(map.element));
+    }
+  </script>
 </body>
 </html>
